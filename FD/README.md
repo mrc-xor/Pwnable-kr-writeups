@@ -13,7 +13,8 @@ Mommy! What is a file discriptor in Linux?
         stdout=1
         stderr=2
 
-    The program ask some user input, Then it change that into intiger value then it subtract that number and provide to read 
+    The program ask some user input, Then it change that value into intiger,
+    Then is subtract (user input and 0x1234)
 
         The subtract value is 0x1234 lets think like this 
 
@@ -21,5 +22,8 @@ Mommy! What is a file discriptor in Linux?
             0x1234
             ------
                 0
-        so now the read will ready to accept user input ,Once ask input let give this LETMEWIN
-        then the Challenge read the flag and print to the string
+        len = read(fd,buf,32) now fd is point to stdin we can give input to the program
+        Once the program ask user input,It compare with LETMEWIN strin using (strcmp) provide LETMEWIN input field
+        
+        If(!stcmp("LETMEWIN",buf)) give some user input based on this if conndition ,we can get the flag
+        
